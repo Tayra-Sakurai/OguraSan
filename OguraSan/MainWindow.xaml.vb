@@ -249,4 +249,24 @@ Class MainWindow
         SettingsMe.Kimariji = False
         Refresh()
     End Sub
+
+    ''' <summary>
+    ''' Shortcuts to the event.
+    ''' </summary>
+    ''' <param name="sender">
+    ''' (Object)
+    ''' The sender.
+    ''' </param>
+    ''' <param name="e">
+    ''' (KeyEventArgs)
+    ''' Event arguments.
+    ''' </param>
+    ''' <seealso cref="SuperSubmitButton_Click(Object, RoutedEventArgs)"/>
+    Private Sub SuperAnswer_PreviewKeyDown(sender As Object, e As KeyEventArgs) Handles SuperAnswer.PreviewKeyDown
+        ' The key type
+        Dim key As Key = e.Key
+        If key = Key.Return Then
+            Check_Result()
+        End If
+    End Sub
 End Class
