@@ -191,6 +191,17 @@ Class MainWindow
         SuperAnswer.Text = ""
     End Sub
 
+    ''' <summary>
+    ''' Initilizes the components.
+    ''' </summary>
+    ''' <param name="sender">
+    ''' (Object)
+    ''' The event's sender.
+    ''' </param>
+    ''' <param name="e">
+    ''' (RoutedEventArgs)
+    ''' Event arguments.
+    ''' </param>
     Private Sub SuperWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles SuperWindow.Loaded
         Refresh()
     End Sub

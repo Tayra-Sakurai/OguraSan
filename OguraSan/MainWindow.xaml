@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:OguraSan"
         mc:Ignorable="d"
         Title="MainWindow" Height="610" Width="987" FontFamily="BIZ UDPGothic" FontSize="16">
+    <Window.Resources>
+        <Style TargetType="MenuItem">
+            <Setter Property="FontFamily" Value="Noto Sans JP"/>
+            <Setter Property="FontSize" Value="12px"/>
+        </Style>
+    </Window.Resources>
     <Grid Margin="5,5,5,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
