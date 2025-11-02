@@ -16,8 +16,7 @@
     <Version>1.1.1</Version>
     <Authors>Tayra Sakurai</Authors>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Added new function.
-You can submit your answer by just pressing the Enter key.</PackageReleaseNotes>
+    <PackageReleaseNotes>Bugfix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
