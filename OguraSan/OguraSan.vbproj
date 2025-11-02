@@ -8,8 +8,8 @@
     <NeutralLanguage>ja-JP</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later AND CC-BY-SA-4.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.1.1.0</AssemblyVersion>
-    <FileVersion>1.1.1.0</FileVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <RepositoryUrl>https://github.com/Tayra-Sakurai/OguraSan</RepositoryUrl>
     <Copyright>(C) 2025 Tayra Sakurai</Copyright>
     <Description>This is a smart learning application.</Description>
@@ -19,6 +19,10 @@
     <PackageReleaseNotes>Added new function.
 You can submit your answer by just pressing the Enter key.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="TextTemplate.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Windows" />
