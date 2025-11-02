@@ -20,10 +20,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="TextTemplate.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Import Include="System.Windows" />
     <Import Include="System.Windows.Controls" />
     <Import Include="System.Windows.Data" />
