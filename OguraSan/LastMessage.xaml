@@ -1,0 +1,29 @@
+﻿<Window x:Name="LastMessage1" x:Class="LastMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OguraSan"
+        mc:Ignorable="d"
+        Title="Complete!" Height="450" Width="800">
+    <Window.Resources>
+        <CollectionViewSource x:Key="OguraViewSource"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource OguraViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock>全ての問題が終了しました．</TextBlock>
+        <DataGrid x:Name="HyperDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" Grid.Row="1" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="番号" Width="SizeToHeader"/>
+                <DataGridTextColumn Binding="{Binding Kaminoku}" Header="上の句" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Shimonoku}" Header="答え" Width="*"/>
+                <DataGridCheckBoxColumn Binding="{Binding IsPrviousCorrect}" Header="結果" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" x:Name="HyperButton" Content="閉じて終了" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
