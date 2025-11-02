@@ -143,6 +143,7 @@ Class MainWindow
     ''' Updates the CurrentItem.
     ''' </summary>
     Private Sub Update_Item()
+        CurrentProgress.IsFirstTrial = True
         If CurrentProgress.QuestionsCount < Ogura.Table.Local.Count Then
             ' Random generator
             Dim rand As New Random()
@@ -153,6 +154,7 @@ Class MainWindow
             Loop
             CurrentProgress.Index = i
             CurrentItem = Ogura.Table.Local.Skip(i).FirstOrDefault()
+            SettingsMe.ProgressDataCurrent = JsonSerializer.Serialize(Of ProgressData)(CurrentProgress)
             SettingsMe.Save()
         Else
             ' Last message
@@ -193,6 +195,17 @@ Class MainWindow
         Refresh()
     End Sub
 
+    ''' <summary>
+    ''' Button Actions.
+    ''' </summary>
+    ''' <param name="sender">
+    ''' (Object)
+    ''' The sender of the event
+    ''' </param>
+    ''' <param name="e">
+    ''' (RoutedEventArgs)
+    ''' Event arguments.
+    ''' </param>
     Private Sub SuperSubmitButton_Click(sender As Object, e As RoutedEventArgs) Handles SuperSubmitButton.Click
         Check_Result()
     End Sub
