@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OguraSan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontFamily="BIZ UDPGothic" FontSize="16">
-    <Grid>
+        Title="MainWindow" Height="610" Width="987" FontFamily="BIZ UDPGothic" FontSize="16">
+    <Grid Margin="5,5,5,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
