@@ -1,10 +1,10 @@
 ﻿Public Class ProgressData
     Public Sub New()
-        EndedQuestions = New List(Of Integer)()
+        _EndedQuestions = New List(Of Integer)()
         Record = 0
     End Sub
     Dim _Index As Integer
-    Public Property EndedQuestions As List(Of Integer)
+    Public ReadOnly Property EndedQuestions As List(Of Integer)
     Public Property Index As Integer
         Get
             Return _Index
@@ -16,7 +16,7 @@
     End Property
     Public ReadOnly Property QuestionsCount As Integer
         Get
-            Return _EndedQuestions.Count() + 1
+            Return _EndedQuestions.Count()
         End Get
     End Property
     Public Property IsFirstTrial As Boolean

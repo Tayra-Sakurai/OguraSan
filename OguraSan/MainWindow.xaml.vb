@@ -125,15 +125,16 @@ Class MainWindow
             Refresh()
         ElseIf Not CurrentProgress.IsFirstTrial Then
             ' Add the item to black list
-            MessageBox.Show($"不正解です．解答は「{CurrentItem.Shimonoku}」でした．", "解答結果", MessageBoxButton.OK, MessageBoxImage.Information)
+            MessageBox.Show($"不正解です．解答は「{CurrentItem.Shimonoku}」でした．", "解答結果", MessageBoxButton.OK, MessageBoxImage.Error)
             SuperAnswer.Text = CurrentItem.Shimonoku
             CurrentItem.IsPrviousCorrect = False
             Ogura.SaveChanges()
             Update_Item()
             Refresh()
         Else
-            MessageBox.Show("不正解", "解答結果", MessageBoxButton.OK, MessageBoxImage.Information)
+            MessageBox.Show("不正解", "解答結果", MessageBoxButton.OK, MessageBoxImage.Error)
             CurrentProgress.IsFirstTrial = False
+            SuperAnswer.Text = String.Empty
         End If
         SettingsMe.ProgressDataCurrent = JsonSerializer.Serialize(Of ProgressData)(CurrentProgress)
         SettingsMe.Save()
