@@ -186,6 +186,7 @@ Class MainWindow
         If CurrentProgress.Record > SettingsMe.MaxRecord Then
             SettingsMe.MaxRecord = CurrentProgress.Record
         End If
+        SuperQuestionsCount.Text = CStr(CurrentProgress.QuestionsCount) + "/" + CStr(Ogura.Table.Count())
         SuperMaxRecord.Text = CStr(SettingsMe.MaxRecord)
         SuperLastRecord.Text = CStr(SettingsMe.LastRecord)
         SuperRecord.Text = CStr(CurrentProgress.Record)

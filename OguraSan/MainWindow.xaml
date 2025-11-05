@@ -20,6 +20,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -35,16 +36,18 @@
             </MenuItem>
         </Menu>
         <TextBlock x:Name="SuperKaminoku" Grid.ColumnSpan="3" Text="秋の田の仮庵の庵の苫をあらみ" FontFamily="UD Digi Kyokasho NP" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
-        <TextBlock x:Name="SuperQuestion" Grid.Row="2" Grid.RowSpan="3" TextWrapping="Wrap">
-            表示されている上の句に対応する下の句を全て歴史的仮名遣いのひらがなで表記した形で入力してください．
+        <TextBlock x:Name="SuperQuestion" Grid.Row="2" Grid.RowSpan="4" TextWrapping="Wrap">
+            表示されている上の句に対応する下の句を全て歴史的仮名遣いのひらがなで表記した形で入力してください．ただし濁点や半濁点は解答に含みません.
         </TextBlock>
-        <Label Target="{Binding ElementName=SuperMaxRecord}" Content="最高記録" Grid.Row="2" Grid.Column="1"/>
-        <TextBox x:Name="SuperMaxRecord" IsReadOnly="True" Grid.Row="2" Grid.Column="2"/>
-        <Label Target="{Binding ElementName=SuperLastRecord}" Content="前回記録" Grid.Row="3" Grid.Column="1"/>
-        <TextBox x:Name="SuperLastRecord" IsReadOnly="True" Grid.Row="3" Grid.Column="2"/>
-        <Label Target="{Binding ElementName=SuperRecord}" Content="今回記録" Grid.Row="4" Grid.Column="1"/>
-        <TextBox x:Name="SuperRecord" IsReadOnly="True" Grid.Row="4" Grid.Column="2"/>
-        <TextBox x:Name="SuperAnswer" Grid.Row="5" FontFamily="UD Digi Kyokasho NP" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="SuperSubmitButton" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">送信</Button>
+        <Label Target="{Binding ElementName=SuperQuestionsCount}" Grid.Row="2" Grid.Column="1">問題数</Label>
+        <TextBox x:Name="SuperQuestionsCount" Grid.Row="2" Grid.Column="2" Text="0/100"/>
+        <Label Target="{Binding ElementName=SuperMaxRecord}" Content="最高記録" Grid.Row="3" Grid.Column="1"/>
+        <TextBox x:Name="SuperMaxRecord" IsReadOnly="True" Grid.Row="3" Grid.Column="2"/>
+        <Label Target="{Binding ElementName=SuperLastRecord}" Content="前回記録" Grid.Row="4" Grid.Column="1"/>
+        <TextBox x:Name="SuperLastRecord" IsReadOnly="True" Grid.Row="4" Grid.Column="2"/>
+        <Label Target="{Binding ElementName=SuperRecord}" Content="今回記録" Grid.Row="5" Grid.Column="1"/>
+        <TextBox x:Name="SuperRecord" IsReadOnly="True" Grid.Row="5" Grid.Column="2"/>
+        <TextBox x:Name="SuperAnswer" Grid.Row="6" FontFamily="UD Digi Kyokasho NP" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="SuperSubmitButton" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">送信</Button>
     </Grid>
 </Window>
