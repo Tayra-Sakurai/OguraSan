@@ -1,5 +1,5 @@
 ﻿Public Class ProgressData
-    Public ReadOnly Property EndedQuestions As List(Of Integer)
+    Public Property EndedQuestions As List(Of Integer)
     Public Sub New()
         If IsNothing(_EndedQuestions) Then
             _EndedQuestions = New List(Of Integer)()

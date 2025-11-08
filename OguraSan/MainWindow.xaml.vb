@@ -70,6 +70,7 @@ Class MainWindow
             CurrentProgress = JsonSerializer.Deserialize(Of ProgressData)(JProgress)
             index = CurrentProgress.Index
             CurrentItem = Ogura.Table.Local.Skip(index).FirstOrDefault()
+            Debug.WriteLine(CStr(CurrentProgress.QuestionsCount))
         Else
             CurrentProgress = New ProgressData()
             With CurrentProgress
