@@ -1,10 +1,12 @@
 ﻿Public Class ProgressData
+    Public ReadOnly Property EndedQuestions As List(Of Integer)
     Public Sub New()
-        _EndedQuestions = New List(Of Integer)()
+        If IsNothing(_EndedQuestions) Then
+            _EndedQuestions = New List(Of Integer)()
+        End If
         Record = 0
     End Sub
     Dim _Index As Integer
-    Public ReadOnly Property EndedQuestions As List(Of Integer)
     Public Property Index As Integer
         Get
             Return _Index

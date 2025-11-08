@@ -12,7 +12,7 @@ Class MainWindow
     ''' Questioned item
     ''' </summary>
     ''' <returns>
-    ''' (Table)
+    ''' <see cref="Table"/>
     ''' The Table Object of the current question
     ''' </returns>
     Friend Property CurrentItem As Table
@@ -21,8 +21,8 @@ Class MainWindow
     ''' Progress Data
     ''' </summary>
     ''' <returns>
-    ''' (ProgressData)
-    ''' Serializable Progress data
+    ''' <see cref="ProgressData"/>
+    ''' Serializable Progress data.
     ''' </returns>
     Friend Property CurrentProgress As ProgressData
 
@@ -59,11 +59,13 @@ Class MainWindow
         Ogura.Table.Load()
         ' Selects the first question
         Dim rnd As New Random()
+        ' The question index.
         Dim index As Integer = rnd.Next(Ogura.Table.Count())
         CurrentItem = Ogura.Table.Local.Skip(index).FirstOrDefault()
 
         ' Gets the data settings
-        If SettingsMe.ProgressDataCurrent IsNot Nothing Then
+        If Not (String.IsNullOrEmpty(SettingsMe.ProgressDataCurrent)) Then
+            ' The JSON String of the progress data.
             Dim JProgress As String = SettingsMe.ProgressDataCurrent
             CurrentProgress = JsonSerializer.Deserialize(Of ProgressData)(JProgress)
             index = CurrentProgress.Index
@@ -197,11 +199,11 @@ Class MainWindow
     ''' Initilizes the components.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The event's sender.
     ''' </param>
     ''' <param name="e">
-    ''' (RoutedEventArgs)
+    ''' <see cref="RoutedEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     Private Sub SuperWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles SuperWindow.Loaded
@@ -212,11 +214,11 @@ Class MainWindow
     ''' Button Actions.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The sender of the event
     ''' </param>
     ''' <param name="e">
-    ''' (RoutedEventArgs)
+    ''' <see cref="RoutedEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     Private Sub SuperSubmitButton_Click(sender As Object, e As RoutedEventArgs) Handles SuperSubmitButton.Click
@@ -227,11 +229,11 @@ Class MainWindow
     ''' Opens the font setting window.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The sender of the event.
     ''' </param>
     ''' <param name="e">
-    ''' (RoutedEventArgs)
+    ''' <see cref="RoutedEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     Private Sub SuperFont_Click(sender As Object, e As RoutedEventArgs) Handles SuperFont.Click
@@ -245,11 +247,11 @@ Class MainWindow
     ''' Activates Kimariji mode.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The sender of the event.
     ''' </param>
     ''' <param name="e">
-    ''' (RoutedEventArgs)
+    ''' <see cref="RoutedEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     ''' <seealso cref="Refresh()"/>
@@ -262,11 +264,11 @@ Class MainWindow
     ''' Deactivates the Kimariji mode.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The sender.
     ''' </param>
     ''' <param name="e">
-    ''' (RoutedEventArgs)
+    ''' <see cref="RoutedEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     ''' <seealso cref="SuperMenuItemKimariji_Checked(Object, RoutedEventArgs)"/>
@@ -280,11 +282,11 @@ Class MainWindow
     ''' Shortcuts to the event.
     ''' </summary>
     ''' <param name="sender">
-    ''' (Object)
+    ''' <see cref="Object"/>.
     ''' The sender.
     ''' </param>
     ''' <param name="e">
-    ''' (KeyEventArgs)
+    ''' <see cref="KeyEventArgs"/>.
     ''' Event arguments.
     ''' </param>
     ''' <seealso cref="SuperSubmitButton_Click(Object, RoutedEventArgs)"/>
