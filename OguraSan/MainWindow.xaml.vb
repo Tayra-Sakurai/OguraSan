@@ -12,7 +12,7 @@ Class MainWindow
     ''' Questioned item
     ''' </summary>
     ''' <returns>
-    ''' <see cref="Table"/>
+    ''' <see cref="Table"/>.
     ''' The Table Object of the current question
     ''' </returns>
     Friend Property CurrentItem As Table
@@ -21,7 +21,7 @@ Class MainWindow
     ''' Progress Data
     ''' </summary>
     ''' <returns>
-    ''' <see cref="ProgressData"/>
+    ''' <see cref="ProgressData"/>.
     ''' Serializable Progress data.
     ''' </returns>
     Friend Property CurrentProgress As ProgressData
