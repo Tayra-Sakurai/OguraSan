@@ -1,4 +1,5 @@
 ﻿Imports System.Text.Json
+Imports System.Threading
 Imports System.Windows.Media.Animation
 Imports Microsoft.EntityFrameworkCore
 
@@ -138,8 +139,6 @@ Class MainWindow
             CurrentProgress.IsFirstTrial = False
             SuperAnswer.Text = String.Empty
         End If
-        SettingsMe.ProgressDataCurrent = JsonSerializer.Serialize(Of ProgressData)(CurrentProgress)
-        SettingsMe.Save()
     End Sub
 
     ''' <summary>
@@ -178,20 +177,31 @@ Class MainWindow
     ''' Update settings.
     ''' </summary>
     Private Sub Refresh()
+        ' Fade out animation.
         SuperFadeOut.Begin(Me)
+        ' Check out the mode.
         If SettingsMe.Kimariji Then
+            ' In kimariji mode,
+            ' the item's kimariji is displayed.
             SuperKaminoku.Text = CurrentItem.Kimariji
         Else
+            ' In normal mode
+            ' the kaminoku is displayed.
             SuperKaminoku.Text = CurrentItem.Kaminoku
         End If
+        ' Fade in the question.
         SuperFadeIn.Begin(Me)
+        ' Update the maximum record textbox if necessary.
         If CurrentProgress.Record > SettingsMe.MaxRecord Then
+            ' Update.
             SettingsMe.MaxRecord = CurrentProgress.Record
         End If
+        ' Update every record boxes.
         SuperQuestionsCount.Text = CStr(CurrentProgress.QuestionsCount) + "/" + CStr(Ogura.Table.Count())
         SuperMaxRecord.Text = CStr(SettingsMe.MaxRecord)
         SuperLastRecord.Text = CStr(SettingsMe.LastRecord)
         SuperRecord.Text = CStr(CurrentProgress.Record)
+        ' Reset the answer space.
         SuperAnswer.Text = ""
     End Sub
 
