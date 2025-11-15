@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OguraSan" SizeToContent="WidthAndHeight"
         FontFamily="BIZ UDPGothic" FontSize="16" Icon="/Icon.ico"
-        ResizeMode="CanMinimize">
+        ResizeMode="CanResize">
     <Window.Resources>
         <Style TargetType="MenuItem">
             <Setter Property="FontFamily" Value="Noto Sans JP"/>

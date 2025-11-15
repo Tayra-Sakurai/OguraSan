@@ -8,12 +8,12 @@
     <NeutralLanguage>ja-JP</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later AND CC-BY-SA-4.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>2025.2.2.0</AssemblyVersion>
-    <FileVersion>2025.2.2.0</FileVersion>
+    <AssemblyVersion>2025.2.3.0</AssemblyVersion>
+    <FileVersion>2025.2.3.0</FileVersion>
     <RepositoryUrl>https://github.com/Tayra-Sakurai/OguraSan</RepositoryUrl>
     <Copyright>(C) 2025 Tayra Sakurai</Copyright>
     <Description>This is a smart learning application.</Description>
-    <Version>2025.2.2</Version>
+    <Version>2025.2.3</Version>
     <Authors>Tayra Sakurai</Authors>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>This update includes a UI change. Fixed a small UI bug.</PackageReleaseNotes>
