@@ -8,16 +8,17 @@
     <NeutralLanguage>ja-JP</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later AND CC-BY-SA-4.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>2025.1.1.0</AssemblyVersion>
-    <FileVersion>2025.1.1.0</FileVersion>
+    <AssemblyVersion>2025.1.2.0</AssemblyVersion>
+    <FileVersion>2025.1.2.0</FileVersion>
     <RepositoryUrl>https://github.com/Tayra-Sakurai/OguraSan</RepositoryUrl>
     <Copyright>(C) 2025 Tayra Sakurai</Copyright>
     <Description>This is a smart learning application.</Description>
-    <Version>2025.1.1</Version>
+    <Version>2025.1.2</Version>
     <Authors>Tayra Sakurai</Authors>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>This version contains some bugfixes. This update is recommended for everyone.</PackageReleaseNotes>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <PackageIcon>WinWordLogoSmall.scale-180.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,6 +37,13 @@
     <Import Include="System.Windows.Media.Imaging" />
     <Import Include="System.Windows.Navigation" />
     <Import Include="System.Windows.Shapes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Program Files\Microsoft Office\root\Office16\LogoImages\WinWordLogoSmall.scale-180.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

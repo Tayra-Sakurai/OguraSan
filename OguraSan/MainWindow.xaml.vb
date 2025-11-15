@@ -122,11 +122,13 @@ Class MainWindow
         ' Entered Answer
         Dim ans As String = SuperAnswer.Text
         If ans = CurrentItem.Shimonoku Then
+            ' When user answered correctly
             MessageBox.Show("正解", "解答結果", MessageBoxButton.OK, MessageBoxImage.Information)
             CurrentProgress.Record += 1
             Update_Item()
             Refresh()
         ElseIf Not CurrentProgress.IsFirstTrial Then
+            ' When user answered incorrectly.
             ' Add the item to black list
             MessageBox.Show($"不正解です．解答は「{CurrentItem.Shimonoku}」でした．", "解答結果", MessageBoxButton.OK, MessageBoxImage.Error)
             SuperAnswer.Text = CurrentItem.Shimonoku
@@ -135,8 +137,12 @@ Class MainWindow
             Update_Item()
             Refresh()
         Else
+            ' When user answered incorrectly for the first time.
             MessageBox.Show("不正解", "解答結果", MessageBoxButton.OK, MessageBoxImage.Error)
             CurrentProgress.IsFirstTrial = False
+            ' Data saver
+            SettingsMe.ProgressDataCurrent = JsonSerializer.Serialize(Of ProgressData)(CurrentProgress)
+            SettingsMe.Save()
             SuperAnswer.Text = String.Empty
         End If
     End Sub
@@ -197,7 +203,7 @@ Class MainWindow
             SettingsMe.MaxRecord = CurrentProgress.Record
         End If
         ' Update every record boxes.
-        SuperQuestionsCount.Text = CStr(CurrentProgress.QuestionsCount) + "/" + CStr(Ogura.Table.Count())
+        SuperQuestionsCount.Text = CStr(CurrentProgress.QuestionsCount) & "/" & CStr(Ogura.Table.Count())
         SuperMaxRecord.Text = CStr(SettingsMe.MaxRecord)
         SuperLastRecord.Text = CStr(SettingsMe.LastRecord)
         SuperRecord.Text = CStr(CurrentProgress.Record)
@@ -207,6 +213,7 @@ Class MainWindow
 
     ''' <summary>
     ''' Initilizes the components.
+    ''' Displays the first question.
     ''' </summary>
     ''' <param name="sender">
     ''' <see cref="Object"/>.
@@ -217,6 +224,7 @@ Class MainWindow
     ''' Event arguments.
     ''' </param>
     Private Sub SuperWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles SuperWindow.Loaded
+        ' Refresh the window.
         Refresh()
     End Sub
 
@@ -248,8 +256,7 @@ Class MainWindow
     ''' </param>
     Private Sub SuperFont_Click(sender As Object, e As RoutedEventArgs) Handles SuperFont.Click
         ' Font setting dialog
-        Dim fm As New SuperDialogWindow(SuperFontSettings)
-        fm.Owner = Me
+        Dim fm As New SuperDialogWindow(SuperFontSettings) With {.Owner = Me}
         fm.ShowDialog()
     End Sub
 
@@ -267,6 +274,7 @@ Class MainWindow
     ''' <seealso cref="Refresh()"/>
     Private Sub SuperMenuItemKimariji_Checked(sender As Object, e As RoutedEventArgs) Handles SuperMenuItemKimariji.Checked
         SettingsMe.Kimariji = True
+        SettingsMe.Save()
         Refresh()
     End Sub
 
@@ -285,6 +293,7 @@ Class MainWindow
     ''' <seealso cref="Refresh()"/>
     Private Sub SuperMenuItemKimariji_Unchecked(sender As Object, e As RoutedEventArgs) Handles SuperMenuItemKimariji.Unchecked
         SettingsMe.Kimariji = False
+        SettingsMe.Save()
         Refresh()
     End Sub
 
