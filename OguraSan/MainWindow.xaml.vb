@@ -125,6 +125,10 @@ Class MainWindow
             ' When user answered correctly
             MessageBox.Show("正解", "解答結果", MessageBoxButton.OK, MessageBoxImage.Information)
             CurrentProgress.Record += 1
+            ' Correction the record holder.
+            CurrentItem.IsPrviousCorrect = True
+            Ogura.SaveChanges()
+            ' Update the window.
             Update_Item()
             Refresh()
         ElseIf Not CurrentProgress.IsFirstTrial Then
