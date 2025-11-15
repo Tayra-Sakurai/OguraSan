@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OguraSan"
         mc:Ignorable="d"
-        Title="OguraSan" Height="610" Width="987" FontFamily="BIZ UDPGothic" FontSize="16" Icon="/Icon.ico">
+        Title="OguraSan" SizeToContent="WidthAndHeight" FontFamily="BIZ UDPGothic" FontSize="16" Icon="/Icon.ico">
     <Window.Resources>
         <Style TargetType="MenuItem">
             <Setter Property="FontFamily" Value="Noto Sans JP"/>

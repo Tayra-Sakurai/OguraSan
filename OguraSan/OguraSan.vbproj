@@ -8,15 +8,15 @@
     <NeutralLanguage>ja-JP</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later AND CC-BY-SA-4.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>2025.1.3.0</AssemblyVersion>
-    <FileVersion>2025.1.3.0</FileVersion>
+    <AssemblyVersion>2025.2.0.0</AssemblyVersion>
+    <FileVersion>2025.2.0.0</FileVersion>
     <RepositoryUrl>https://github.com/Tayra-Sakurai/OguraSan</RepositoryUrl>
     <Copyright>(C) 2025 Tayra Sakurai</Copyright>
     <Description>This is a smart learning application.</Description>
-    <Version>2025.1.3</Version>
+    <Version>2025.2.0</Version>
     <Authors>Tayra Sakurai</Authors>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>This version contains some bugfixes. This update is recommended for everyone.</PackageReleaseNotes>
+    <PackageReleaseNotes>This update includes a large scale UI change. The size of main window has become to be sutoscaled.</PackageReleaseNotes>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
     <PackageIcon>WinWordLogoSmall.scale-180.png</PackageIcon>
   </PropertyGroup>
