@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OguraSan"
         mc:Ignorable="d"
-        Title="OguraSan" SizeToContent="WidthAndHeight" FontFamily="BIZ UDPGothic" FontSize="16" Icon="/Icon.ico">
+        Title="OguraSan" SizeToContent="WidthAndHeight"
+        FontFamily="BIZ UDPGothic" FontSize="16" Icon="/Icon.ico"
+        ResizeMode="CanMinimize">
     <Window.Resources>
         <Style TargetType="MenuItem">
             <Setter Property="FontFamily" Value="Noto Sans JP"/>
@@ -35,7 +37,7 @@
                 <MenuItem x:Name="SuperFont" Header="フォント設定 (_F)"/>
             </MenuItem>
         </Menu>
-        <TextBlock x:Name="SuperKaminoku" Grid.ColumnSpan="3" Text="秋の田の仮庵の庵の苫をあらみ" FontFamily="UD Digi Kyokasho NP" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+        <TextBlock x:Name="SuperKaminoku" Grid.ColumnSpan="3" Text="秋の田の仮庵の庵の苫をあらみ" FontFamily="UD Digi Kyokasho NP" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Margin="10,10,10,10"/>
         <TextBlock x:Name="SuperQuestion" Grid.Row="2" Grid.RowSpan="4" TextWrapping="Wrap">
             表示されている上の句に対応する下の句を全て歴史的仮名遣いのひらがなで表記した形で入力してください．ただし濁点や半濁点は解答に含みません.
         </TextBlock>

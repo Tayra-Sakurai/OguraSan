@@ -1,5 +1,4 @@
 ﻿Imports System.Text.Json
-Imports System.Threading
 Imports System.Windows.Media.Animation
 Imports Microsoft.EntityFrameworkCore
 
@@ -319,5 +318,40 @@ Class MainWindow
         If key = Key.Return Then
             Check_Result()
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Set the maximum width and height.
+    ''' </summary>
+    ''' <param name="sender">
+    ''' <see cref="Object"/>.
+    ''' The sender of the
+    ''' <see cref="Window.LocationChanged"/>.
+    ''' </param>
+    ''' <param name="e">
+    ''' (<see cref="EventArgs"/>)
+    ''' The event arguments.
+    ''' </param>
+    Private Sub MainWindow_LocationChanged(sender As Object, e As EventArgs) Handles SuperWindow.LocationChanged
+        ' The left location
+        Dim left As Double = SuperWindow.Left
+        ' The top location
+        Dim top As Double = SuperWindow.Top
+
+        ' Set the maximum size.
+
+        ' Screen size.
+
+        ' Screen width.
+        ' This is constant
+        Dim SCREEN_WIDTH As Double = SystemParameters.WorkArea.Width
+        ' Screen height.
+        ' Assumed as constant.
+        Dim SCREEN_HEIGHT As Double = SystemParameters.WorkArea.Height
+
+        ' Set the maximum size.
+
+        SuperWindow.MaxHeight = SCREEN_HEIGHT - top
+        SuperWindow.MaxWidth = SCREEN_WIDTH - left
     End Sub
 End Class
