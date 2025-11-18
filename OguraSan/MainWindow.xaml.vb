@@ -215,6 +215,15 @@ Class MainWindow
     End Sub
 
     ''' <summary>
+    ''' Update settings UI from the setting data.
+    ''' </summary>
+    Private Sub Update_UI_Setting()
+        ' The kimariji mode settings
+        Dim kimariji As Boolean = SettingsMe.Kimariji
+        SuperMenuItemKimariji.IsChecked = kimariji
+    End Sub
+
+    ''' <summary>
     ''' Initilizes the components.
     ''' Displays the first question.
     ''' </summary>
@@ -229,6 +238,8 @@ Class MainWindow
     Private Sub SuperWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles SuperWindow.Loaded
         ' Refresh the window.
         Refresh()
+        ' Update UI
+        Update_UI_Setting()
     End Sub
 
     ''' <summary>
