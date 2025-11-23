@@ -175,6 +175,11 @@ Class MainWindow
                 SettingsMe.DataSaved = False
                 SettingsMe.LastRecord = CurrentProgress.Record
                 SettingsMe.Save()
+                ' If necessary, MaxRecord will be updated.
+                If SettingsMe.LastRecord > SettingsMe.MaxRecord Then
+                    SettingsMe.MaxRecord = SettingsMe.LastRecord
+                    SettingsMe.Save()
+                End If
                 Application.Current.Shutdown()
             End If
         End If
